@@ -19,4 +19,14 @@ Optional parameters:
   - -df: Specifies the way of formatting dates. It's useful to convert strings from CSV to the custom excel date format. Supports every date format. Default: "dd/MM/yyyy"
   - -enc: Set the encoding for reading CSV files. Default: "UTF-8"
   - -i: This flag switches the way it handles formulas. If this flag is specified, it wont parse formulas and treat rows with only formula values as empty rows
+  
+Examples of arguments combinations:
 
+Parsing Excel file to CSV file
+-f "C:\myExcel.xlsx" -o "C:\myReport.csv" -m parse -s "sheet1" -df "dd/MM/yyyy HH:mm:ss" -i
+
+Appending CSV data to the worksheet
+-f "C:\myExcel.xlsx" -o "C:\myReport.csv" -m append -s "sheet1" -df "dd/MM/yyyy HH:mm:ss" -i
+
+Merging CSV data with worksheet data
+-f "C:\myExcel.xlsx" -o "C:\myReport.csv" -m merge -s "sheet1" -df "dd/MM/yyyy HH:mm:ss" -i
